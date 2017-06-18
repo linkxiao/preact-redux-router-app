@@ -1,12 +1,14 @@
+import { FETCH_USER, FETCH_USERFILLED } from './actionType';
+
 const action = {
     fetchUser: (accountId) => (dispatch) => {
-        dispatch({ type: 'FETCH_USER' });
+        dispatch({ type: FETCH_USER });
 
         fetch(`https://api.github.com/users/${accountId}`)
             .then(response => response.json())
             .then((user) => {
                 dispatch({
-                    type: 'FETCH_USERFILLED',
+                    type: FETCH_USERFILLED,
                     payload: user
                 })
             })

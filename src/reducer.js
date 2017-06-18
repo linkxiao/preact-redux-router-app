@@ -1,3 +1,5 @@
+import { FETCH_USER, FETCH_USERFILLED } from './actionType';
+
 const initState = {
     loading: true,
     user: null
@@ -5,12 +7,12 @@ const initState = {
 
 const reducer = (state = initState, action) => {
     switch (action.type) {
-        case 'FETCH_USER':
+        case FETCH_USER:
             return {
                 loading: true,
                 user: null
             }
-        case 'FETCH_USERFILLED':
+        case FETCH_USERFILLED:
             return {
                 loading: false,
                 user: action.payload

@@ -5,7 +5,7 @@ import store from './store';
 const rootElement = document.getElementById('app');
 
 const renderApp = (element) => {
-    const App = require('./app');
+    const App = require('./component/app');
     render(
         <Provider store={store}>
             <App />
