@@ -2,6 +2,8 @@
 
 Egghead Online Course: [Up and Running with Preact](https://egghead.io/courses/up-and-running-with-preact)
 
+![image](https://rawgit.com/mvpdw06/try-preact/master/img/preact.png)
+
 ## Current on Class
 
 > All missions completed!
