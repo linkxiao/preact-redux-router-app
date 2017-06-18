@@ -41,6 +41,13 @@ Egghead Online Course: [Up and Running with Preact](https://egghead.io/courses/u
         );
     }
     ```
+4. Integrate with React dev tools.
+    ```
+    import 'preact/devtools';
+    ```
+
+    And you can see your preact component in React dev tools.
+
 
 ## Reduce React app size with preact-compat
 
@@ -83,4 +90,3 @@ So, we can use react-router-dom API in my App without preact-router!
 ## Current problem
 
 1. Can not use React-hot-loader.
-2. With parameter component can not reload successful.

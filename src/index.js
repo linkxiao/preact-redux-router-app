@@ -1,5 +1,6 @@
 import { h, render } from 'preact';
 import { Provider } from 'preact-redux';
+import 'preact/devtools';
 
 import store from './store';
 const rootElement = document.getElementById('app');
