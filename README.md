@@ -4,7 +4,7 @@ Egghead Online Course: [Up and Running with Preact](https://egghead.io/courses/u
 
 ## Current on Class
 
-> Class-08 Reduce the Size of a React App in Two Lines with preact-compat
+> Class-09 Handle Simple Routing with preact-router
 
 ## What different with React?
 

@@ -1,15 +1,8 @@
 import { h, Component } from 'preact';
 
-class StatefulApp extends Component {
-    constructor() {
-        super();
-        this.state = {
-            loading: true,
-            user: null
-        };
-    }
+class Profile extends Component {
     componentDidMount() {
-        fetch(this.props.url)
+        fetch(`https://api.github.com/users/${this.props.accountId}`)
             .then(response => response.json())
             .then(user => {
                 this.setState({
@@ -20,7 +13,7 @@ class StatefulApp extends Component {
             .catch(error => console.log(err));
     }
     loadingMode = () => (
-        <div>Loading...</div>
+        <p>Loading...</p>
     )
     completeMode = (user) => (
         <div>
@@ -28,12 +21,13 @@ class StatefulApp extends Component {
             <ul>
                 <li>name: {user.name}</li>
                 <li>url: {user.avatar_url}</li>
+                <p><a href="/">Back to Home</a></p>
             </ul>
         </div>
     )
-    render(props, { loading, user }) {
+    render(props, { loading = true, user = null }) {
         return loading ? this.loadingMode() : this.completeMode(user);
     }
 }
 
-module.exports = StatefulApp;
+module.exports = Profile;

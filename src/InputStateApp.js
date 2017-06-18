@@ -12,6 +12,7 @@ class InputStateApp extends Component {
                     <input type="text" value={text} onInput={linkState(this, 'text')} />
                 </form>
                 <pre><code>{JSON.stringify(this.state, null, 2)}</code></pre>
+                <p><a href="/">Back to Home</a></p>
             </div>
         );
     }
