@@ -48,6 +48,22 @@ Egghead Online Course: [Up and Running with Preact](https://egghead.io/courses/u
 
     And you can see your preact component in React dev tools.
 
+5. Preact's Official recommendation is using Hot Module Replacement, not integrate with React-Hot-Loader.
+6. When module.hot, you need to replace component automatically. Preact's render API needs another setting!
+    ```
+    import { h, render } from 'preact';
+
+    let root;
+    renderApp = () => {
+        root = render(<App />, document.body, root);
+    }
+
+    module.hot && module.hot.accept(
+        './app.js',
+        renderApp
+    );
+    ```
+    And you can auto reload component with Preact.
 
 ## Reduce React app size with preact-compat
 
@@ -87,6 +103,21 @@ $ yarn add preact-compat react-router-dom
 
 So, we can use react-router-dom API in my App without preact-router!
 
-## Current problem
+## Integrate with React-Hot-Loader
 
-1. Can not use React-hot-loader.
+```
+// in webpack.config.js
+{
+    "resolve": {
+        "alias": {
+            "react": "preact-compat",
+            "react-dom": "preact-compat",
+            'preact-compat': 'preact-compat/dist/preact-compat'
+        }
+    }
+}
+```
+
+And you can fix React-Hot-Loader can not find React.createElement API issue.
+
+> But!!!!!!!!!! React-Hot-Loader can not work in Preact app, so you only can use in React warped app as Preact.

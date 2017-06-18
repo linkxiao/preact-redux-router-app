@@ -3,21 +3,22 @@ import { Provider } from 'preact-redux';
 import 'preact/devtools';
 
 import store from './store';
-const rootElement = document.getElementById('app');
 
-const renderApp = (element) => {
+let root;
+const renderApp = () => {
     const App = require('./component/app');
-    render(
+    root = render(
         <Provider store={store}>
             <App />
-        </Provider>, 
-        element
+        </Provider>,
+        document.body,
+        root
     );
 };
 
-renderApp(rootElement);
+renderApp(false);
 
-// module.hot && module.hot.accept(
-//     './app.js',
-//     () => renderApp(rootElement)
-// )
+module.hot && module.hot.accept(
+    './component/app.js',
+    renderApp
+)
