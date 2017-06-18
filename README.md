@@ -4,7 +4,7 @@ Egghead Online Course: [Up and Running with Preact](https://egghead.io/courses/u
 
 ## Current on Class
 
-> Class-09 Handle Simple Routing with preact-router
+> Class-10 Integrate react-router with Preact
 
 ## What different with React?
 
@@ -37,13 +37,35 @@ Egghead Online Course: [Up and Running with Preact](https://egghead.io/courses/u
 ```
 // in webpack.config.js
 {
-  "resolve": {
-    "alias": {
-      "react": "preact-compat",
-      "react-dom": "preact-compat"
+    "resolve": {
+        "alias": {
+            "react": "preact-compat",
+            "react-dom": "preact-compat"
+        }
     }
-  }
 }
 ```
 
 > preact-compat will replace React, ReactDOM to Preact.
+
+## Integrate with React-Router (replace preact-router)
+
+```
+// in webpack.config.js
+{
+    "resolve": {
+        "alias": {
+            "react": "preact-compat",
+            "react-dom": "preact-compat"
+        }
+    }
+}
+```
+
+and also need
+
+```
+$ yarn add preact-compat react-router-dom
+```
+
+So, we can use react-router-dom API in my App without preact-router!

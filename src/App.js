@@ -1,5 +1,9 @@
 import { h } from 'preact';
-import { Router } from 'preact-router';
+import { 
+    BrowserRouter as Router,
+    Route,
+    Switch
+} from 'react-router-dom';
 import Home from './Home';
 import Profile from './Profile';
 import InputStateApp from './InputStateApp';
@@ -10,11 +14,13 @@ const App = () => (
     <div>
         <h1>Hello Preact.</h1>
         <Router>
-            <Home path="/" />
-            <SearchPage path="/search" />
-            <Profile path="/profile/:accountId" />
-            <InputStateApp path="/inputstateapp" />
-            <Error default />
+            <Switch>
+                <Route exact path="/" component={Home} />
+                <Route path="/search" component={SearchPage} />
+                <Route path="/profile/:accountId" component={Profile} />
+                <Route path="/inputstateapp" component={InputStateApp} />
+                <Route component={Error} />
+            </Switch>
         </Router>
     </div>
 );

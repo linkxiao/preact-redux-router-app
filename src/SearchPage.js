@@ -1,21 +1,23 @@
 import { h } from 'preact';
-import { route } from 'preact-router';
+import { withRouter } from 'react-router-dom';
 
-const search = (queryAccountId) => {
-    route(`/profile/${encodeURIComponent(queryAccountId)}`);
+const search = (router, queryAccountId) => {
+    if (queryAccountId) {
+        router.history.push(`/profile/${encodeURIComponent(queryAccountId)}`);
+    }
 }
 
-const SearchPage = () => {
+const SearchPage = (router) => {
     return(
         <section>
             <p>Enter an account of Github.</p>
             <input 
                 type="search"
                 placeholder="eg: mvpde06"
-                onSearch={(e) => search(e.target.value)}
+                onSearch={(e) => search(router, e.target.value)}
                 />
         </section>
     )
 }
 
-module.exports = SearchPage;
+module.exports = withRouter(SearchPage);

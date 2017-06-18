@@ -24,7 +24,8 @@
     "babel-preset-stage-0": "^6.24.1",
     "linkstate": "^1.0.1",
     "preact": "^8.1.0",
-    "preact-router": "^2.5.2",
+    "preact-compat": "^3.16.0",
+    "react-router-dom": "^4.1.1",
     "webpack": "^2.6.1",
     "webpack-dev-server": "^2.4.5",
     "whatwg-fetch": "^2.0.3"

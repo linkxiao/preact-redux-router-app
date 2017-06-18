@@ -1,8 +1,10 @@
 import { h, Component } from 'preact';
+import { Link } from 'react-router-dom';
 
 class Profile extends Component {
     componentDidMount() {
-        fetch(`https://api.github.com/users/${this.props.accountId}`)
+        const accountId = this.props.match.params.accountId;
+        fetch(`https://api.github.com/users/${accountId}`)
             .then(response => response.json())
             .then(user => {
                 this.setState({
@@ -21,7 +23,7 @@ class Profile extends Component {
             <ul>
                 <li>name: {user.name}</li>
                 <li>url: {user.avatar_url}</li>
-                <p><a href="/">Back to Home</a></p>
+                <p><Link to="/">Back to Home</Link></p>
             </ul>
         </div>
     )
