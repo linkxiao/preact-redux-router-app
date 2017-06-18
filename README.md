@@ -103,7 +103,7 @@ $ yarn add preact-compat react-router-dom
 
 So, we can use react-router-dom API in my App without preact-router!
 
-## Integrate with React-Hot-Loader
+## Integrate with React-Hot-Loader in React app.
 
 ```
 // in webpack.config.js
