@@ -1,18 +1,12 @@
 import { h, Component } from 'preact';
 import { Link } from 'react-router-dom';
+import { connect } from 'preact-redux';
+import { fetchUser } from './action';
 
 class Profile extends Component {
     componentDidMount() {
         const accountId = this.props.match.params.accountId;
-        fetch(`https://api.github.com/users/${accountId}`)
-            .then(response => response.json())
-            .then(user => {
-                this.setState({
-                    user,
-                    loading: false
-                });
-            })
-            .catch(error => console.log(err));
+        this.props.fetchUser(accountId);
     }
     loadingMode = () => (
         <p>Loading...</p>
@@ -27,9 +21,25 @@ class Profile extends Component {
             </ul>
         </div>
     )
-    render(props, { loading = true, user = null }) {
+    render({ loading, user }) {
         return loading ? this.loadingMode() : this.completeMode(user);
     }
 }
 
-module.exports = Profile;
+const mapStateToProps = ({ loading, user }) => {
+    return {
+        loading,
+        user
+    }
+}
+
+const mapDispatchToProps = (dispatch) => (
+    {
+        fetchUser: (accountId) => dispatch(fetchUser(accountId))
+    }
+)
+
+module.exports = connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(Profile);

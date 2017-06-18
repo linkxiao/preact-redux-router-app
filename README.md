@@ -4,7 +4,15 @@ Egghead Online Course: [Up and Running with Preact](https://egghead.io/courses/u
 
 ## Current on Class
 
-> Class-10 Integrate react-router with Preact
+> All missions completed!
+
+## Preact ecosystems
+
+1. preact
+2. preact-router
+3. preact-redux
+
+> For replacement React and ReactDOM, you can use preact-compat.
 
 ## What different with React?
 
@@ -69,3 +77,8 @@ $ yarn add preact-compat react-router-dom
 ```
 
 So, we can use react-router-dom API in my App without preact-router!
+
+## Current problem
+
+1. Can not use React-hot-loader.
+2. With parameter component can not reload successful.
