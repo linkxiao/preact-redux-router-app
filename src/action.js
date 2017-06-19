@@ -12,7 +12,7 @@ const action = {
                     payload: user
                 })
             })
-            .catch(error => console.log(err));
+            .catch(error => console.log(error));
     }
 }
 
