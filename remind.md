@@ -5,21 +5,22 @@
   "main": "index.js",
   "scripts": {
     "start": "babel-node ./node_modules/.bin/webpack-dev-server --inline --progress --colors --open",
+    "start":"babel-node devServer.js --hot --inline --open",
+    "start": "babel-node ./node_modules/.bin/webpack-dev-server --devtool eval-source-map --progress --colors --hot --inline --open",
     "dev": "babel-node ./node_modules/.bin/webpack --watch",
     "build": "babel-node ./node_modules/.bin/webpack --optimize-minimize"
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "git+https://github.com/mvpdw06/try-preact.git"
   },
   "author": "RyanHsu",
   "license": "ISC",
   "bugs": {
-    "url": ""
+    "url": "https://github.com/mvpdw06/try-preact/issues"
   },
-  "homepage": "",
+  "homepage": "https://github.com/mvpdw06/try-preact#readme",
   "dependencies": {
-    "@super-fe/BdrainfnEventDispatch": "^1.0.1",
     "babel-cli": "^6.24.1",
     "babel-loader": "^7.0.0",
     "babel-plugin-transform-react-jsx": "^6.24.1",
@@ -31,15 +32,12 @@
     "preact-redux": "^2.0.1",
     "react-router-dom": "^4.1.1",
     "redux": "^3.7.0",
-    "redux-promise": "^0.5.3",
     "redux-thunk": "^2.2.0",
+    "webpack": "^3.8.1",
+    "webpack-dev-server": "^2.4.5",
     "whatwg-fetch": "^2.0.3"
   },
   "devDependencies": {
-    "html-webpack-plugin": "^3.0.7",
-    "preact-router-redux": "^4.1.0",
-    "webpack": "^3.8.1",
-    "webpack-cli": "^2.0.13",
-    "webpack-dev-server": "^2.5.1"
+    "html-webpack-plugin": "^3.0.7"
   }
 }

@@ -1,15 +1,23 @@
-import path from 'path';
+/**
+ * @file The devServer for develop/production
+ * @author linkxiao(linkxiao@icloud.com)
+ * @dete 2018/03/21
+ */
+
 import webpack from 'webpack';
+import path from 'path';
 import WebpackDevServer from 'webpack-dev-server';
 import config from './webpack.config';
 
 const HOST = 'localhost';
-const PORT = 9487;
+const PORT = 8089;
 
 const server = new WebpackDevServer(webpack(config), {
     contentBase: path.join(__dirname, 'output'),
     publicPath: config.output.publicPath,
     hot: true,
+    open: true,
+    inline:true,
     compress: true,
     historyApiFallback: true,
     stats: {

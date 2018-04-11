@@ -1,3 +1,9 @@
+/**
+ * @file The file of app init
+ * @author linkxiao(linkxiao@icloud.com)
+ * @dete 2018/03/20
+ */
+
 import { h, render } from 'preact';
 import { Provider } from 'preact-redux';
 import 'preact/devtools';

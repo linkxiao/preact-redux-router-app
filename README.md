@@ -1,14 +1,7 @@
-# Try Preact
+# Preact-redux-router-app
 
-Egghead Online Course: [Up and Running with Preact](https://egghead.io/courses/up-and-running-with-preact)
 
-![image](https://rawgit.com/mvpdw06/try-preact/master/img/preact.png)
-
-## Current on Class
-
-> All missions completed!
-
-## Preact ecosystems
+## Preact 生态
 
 1. preact
 2. preact-router
@@ -16,16 +9,15 @@ Egghead Online Course: [Up and Running with Preact](https://egghead.io/courses/u
 
 > For replacement React and ReactDOM, you can use preact-compat.
 
-## What different with React?
+## preact和react有什么不同?
 
-1. We need to use babel-plugin-transform-react-jsx to translate Preact.
+1. 需要在".babelrc"设置"babel-plugin-transform-react-jsx"来转换Preact，抛出全局对象"h".
     ```
     "plugins": [
         ["transform-react-jsx", { "pragma": "h" }]
     ]
     ```
-2. Can not use React-Hot-loader.
-3. Component's render API have parameter props and state.
+2. 组件的render方法可配置"props"和"state"参数，用户熟悉和数据的传递：
     ```
     render(props, state) {
         return (
@@ -41,15 +33,14 @@ Egghead Online Course: [Up and Running with Preact](https://egghead.io/courses/u
         );
     }
     ```
-4. Integrate with React dev tools.
+4. 集成react开发工具
     ```
     import 'preact/devtools';
     ```
 
     And you can see your preact component in React dev tools.
 
-5. Preact's Official recommendation is using Hot Module Replacement, not integrate with React-Hot-Loader.
-6. When module.hot, you need to replace component automatically. Preact's render API needs another setting!
+5. 当启用热更新时，需要额外设置组件，以便自动更换，实时change修改!
     ```
     import { h, render } from 'preact';
 
@@ -63,9 +54,9 @@ Egghead Online Course: [Up and Running with Preact](https://egghead.io/courses/u
         renderApp
     );
     ```
-    And you can auto reload component with Preact.
+    设置完后组件有任何修改，将自动触发热更新
 
-## Reduce React app size with preact-compat
+## 用preact-compat减小应用程序的大小
 
 ```
 // in webpack.config.js

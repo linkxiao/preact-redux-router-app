@@ -11,30 +11,29 @@ class Profile extends Component {
     loadingMode = () => (
         <p>Loading...</p>
     )
-    completeMode = (data) => (
+    completeMode = (user) => (
         <div>
             <h2>Load successfully!</h2>
             <ul>
-                <li>name: {data.name}</li>
-                <li>url: {data.avatar_url}</li>
+                <li>name: {user.name}</li>
+                <li>url: {user.avatar_url}</li>
                 <p><Link to="/">Back to Home</Link></p>
             </ul>
         </div>
     )
-    render(state) {
-        return state.profileReducer.loading ? this.loadingMode() : this.completeMode(state.profileReducer.user);
+    render({ loading, user }) {
+        return loading ? this.loadingMode() : this.completeMode(user);
     }
 }
 
-
-//get当前的state(即：等同于store.getState());
-const mapStateToProps = (state, ownProps) => {
-   return state;
+const mapStateToProps = ({ loading, user }) => {
+    return {
+        loading,
+        user
+    }
 }
 
-
-//dispatch当前action(fetchUser)
-const mapDispatchToProps = (dispatch, ownProps) => (
+const mapDispatchToProps = (dispatch) => (
     {
         fetchUser: (accountId) => dispatch(fetchUser(accountId))
     }
