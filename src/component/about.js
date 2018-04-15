@@ -7,7 +7,7 @@ class About extends Component {
     componentDidMount() {
         //const accountId = this.props.match.params.accountId;
         this.props.getAbout();
-        //alert("profile:this.props:"+JSON.stringify(this.props.fetchUser));
+        alert("about:this.props"+JSON.stringify(this.props));
     }
     loadingMode = () => (
         <p>Loading...</p>
@@ -30,7 +30,7 @@ class About extends Component {
     )
     render(state) {
         //alert("render:this.props:"+JSON.stringify(state));
-        return state.aboutReducer.loading ? this.loadingMode() : this.completeMode(state.aboutReducer.about);
+        return state.about.loading ? this.loadingMode() : this.completeMode(state.about.about);
     }
     // render(state) {
     //     alert("this.props:"+JSON.stringify(this.props));

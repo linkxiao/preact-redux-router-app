@@ -1,11 +1,12 @@
 import { h, Component } from 'preact';
 import { Link } from 'react-router-dom';
 import { connect } from 'preact-redux';
-import { getLx } from '../action';
+import * as Actions from '../action';
 
 class Contact extends Component {
     componentDidMount() {
         //this.props.getLx();
+        alert("this.props"+JSON.stringify(this.props));
     }
     loadingMode = () => (
         <p>Loading...</p>
@@ -22,23 +23,27 @@ class Contact extends Component {
         </div>
     )
     render(state) {
-        return state.contactReducer.loading ? this.loadingMode() : this.completeMode(state.contactReducer.contact);
+        return state.contactData.loading ? this.loadingMode() : this.completeMode(state.contactData.contact);
     }
 }
 
 //const mapStateToProps = ({ loading, about }) => {
 const mapStateToProps = (state, ownProps) => {
-  alert("component:contact--:"+JSON.stringify(state));
+  console.log("state.contactData.contact:",state.contactData.contact);
+  //alert("component:contact--:"+JSON.stringify(state));
    return state;
 }
 
 //dispatch当前action(fetchUser)
 const mapDispatchToProps = (dispatch, ownProps) => (
     {
-        getLx:function () {
-            return dispatch(getLx());
-        }
+        getLx:Actions.getLx(dispatch),
     }
+    // {
+    //     getLx:function () {
+    //         return dispatch(getLx());
+    //     }
+    // }
 )
 
 module.exports = connect(

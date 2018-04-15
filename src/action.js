@@ -5,6 +5,7 @@
  */
 
 
+
 import { FETCH_USER, FETCH_USERFILLED, GET_ABOUTINFO, GET_LXINFO} from './actionType';
 
 const action = {
@@ -33,16 +34,27 @@ const action = {
           })
       },
 
-      getLx:() => (dispatch) => {
-           let contact = {
-               "name":"opopop",
-               "phone": "17701321596",
-               "email": "elieen@163.com"
-           }
+      //getLx:() => (dispatch) => {
+      getLx:(dispatch) => (data) => {
+           console.log("getLx:action",data);
+           let preData = {
+                   loading: false,
+                   user: null,
+                   contact: {
+                      "name":"opopop",
+                      "phone": "17701321596",
+                      "email": "elieen@163.com"
+                   }
+              }
+           data = data ? data:preData;
            dispatch({
-               type: GET_LXINFO,
-               data: contact
-           })
+              type: GET_LXINFO,
+              data: preData
+          });
+           // dispatch({
+           //     type: GET_LXINFO,
+           //     data: contact
+           // })
       }
 }
 

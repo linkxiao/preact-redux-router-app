@@ -5,38 +5,39 @@
  */
 
  import { combineReducers } from 'redux';
- import {profileReducer} from './profile';
- import {aboutReducer} from './about';
- import {contactReducer} from './contact';
+ import { profileReducer } from './profile';
+ import { about } from './about';
+ import { contact } from './contact';
+ import { active } from './active';
 
 
 let headerData = (state = {}) => state;
 let sideData = (state = {}) => state;
 let contentData = (state = {}) => state;
+// let contactData = (state = {}) => state;
+//let activeData = (state = {}) => state;
+
 
 export const initStore = function(res) {
-  //alert("res.data.contentData:" + JSON.stringify(res.data.contentData));
-  let contactData = {
-      data: res.data.contactData
-  };
-  const initState = {
-      loading: true,
-      user: null,
-      initData: res.data.contactData
-  }
   return {
+      contactData: contact.init(res.data),
+      //activeData: active.init(res.data),
       headerData: res.data.headerData,
       sideData: res.data.sideData,
       contentData: res.data.contentData
-      //contactReducer:res.data.contactData
   }
+
 }
 
+
+
+
 export default combineReducers({
+    contactData: contact.reducer,
+    //activeData,
+    about,
     headerData,
     sideData,
     contentData,
-    profileReducer,
-    aboutReducer,
-    contactReducer
+    profileReducer
 })

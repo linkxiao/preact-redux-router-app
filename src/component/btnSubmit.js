@@ -7,7 +7,7 @@ class BtnSub extends Component {
         super(props);
         this.setItem = this.setItem.bind(this);
         this.state = {
-          name:'',
+          name:'ioioio',
           age:'',
           keyWord:''
         }

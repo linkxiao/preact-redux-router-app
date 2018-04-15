@@ -32,7 +32,7 @@ const initState = {
 }
 
 //export default function aboutReducer(state = initState, action) {
-export const aboutReducer = (state = initState, action) => {
+export const about = (state = initState, action) => {
     switch (action.type) {
         case GET_ABOUTINFO:
             return {
