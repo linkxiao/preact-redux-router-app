@@ -1,4 +1,4 @@
-import { FETCH_USER, FETCH_USERFILLED, GET_ABOUTINFO, GET_LXINFO } from '../actionType';
+import { GET_LXINFO } from '../lib/const/actionType';
 
 // const initState = {
 //     loading: true,
@@ -12,7 +12,6 @@ import { FETCH_USER, FETCH_USERFILLED, GET_ABOUTINFO, GET_LXINFO } from '../acti
 
 export const contact = {
     init: function(data) {
-      console.log("contactDta:",data.contactData.name);
       return {
            loading: false,
            user: null,

@@ -6,7 +6,7 @@
 
 export * from './profile';
 export * from './about';
-import { FETCH_USER, FETCH_USERFILLED, GET_ABOUTINFO } from '../actionType';
+import { FETCH_USER, FETCH_USERFILLED, GET_ABOUTINFO } from '../lib/const/actionType';
 
 // export const initStore = (res, info) => {
 //     const {aboutData, headerData} = res.data;

@@ -15,7 +15,7 @@ const composeEnhancers =
         window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ?
         window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({
         }) : compose;
-    alert("reducers:"+JSON.stringify(reducers));
+    console.log("reducers:"+JSON.stringify(reducers));
     const store = createStore(
       reducers,
       initStore(window.jsonData),
@@ -23,9 +23,9 @@ const composeEnhancers =
     )
 
 module.hot && module.hot.accept(
-    './reducer',
+    './reducer/index.js',
     () => {
-        const nextReducer = require('./reducer');
+        const nextReducer = require('./reducer/index.js');
         store.replaceReducer(nextReducer);
     }
 );

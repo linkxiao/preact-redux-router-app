@@ -1,4 +1,4 @@
-import { FETCH_USER, FETCH_USERFILLED, GET_ABOUTINFO } from '../actionType';
+import { FETCH_USER, FETCH_USERFILLED } from '../lib/const/actionType';
 
 const initState = {
     loading: true,

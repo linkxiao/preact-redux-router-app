@@ -1,7 +1,8 @@
 import { h, Component } from 'preact';
 import { Link } from 'react-router-dom';
 import { connect } from 'preact-redux';
-import { getAbout } from '../action';
+import * as Actions from '../action/index';
+console.log("Actions:",Actions);
 
 class About extends Component {
     componentDidMount() {
@@ -53,7 +54,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch, ownProps) => (
     {
         getAbout:function () {
-            return dispatch(getAbout());
+            return dispatch(Actions.getAbout());
         }
     }
 )

@@ -1,4 +1,4 @@
-import { FETCH_USER, FETCH_USERFILLED, GET_ABOUTINFO, GET_LXINFO } from '../actionType';
+import { FETCH_USER, FETCH_USERFILLED, GET_ABOUTINFO, GET_LXINFO } from '../lib/const/actionType';
 
 //export default function aboutReducer(state = initState, action) {
 export const active = {

@@ -1,5 +1,5 @@
 //import {profileReducer} from './profile';
-import { FETCH_USER, FETCH_USERFILLED, GET_ABOUTINFO } from '../actionType';
+import { GET_ABOUTINFO } from '../lib/const/actionType';
 // export const initStore = function(res) {
 //   alert("res.data.contentData:" + JSON.stringify(res.data.contentData));
 //   return {

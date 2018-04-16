@@ -1,7 +1,7 @@
 import { h, Component } from 'preact';
 import { Link } from 'react-router-dom';
 import { connect } from 'preact-redux';
-import { fetchUser } from '../action';
+import * as Actions from '../action/index';
 
 class Profile extends Component {
     componentDidMount() {
@@ -36,7 +36,7 @@ const mapStateToProps = (state, ownProps) => {
 //dispatch当前action(fetchUser)
 const mapDispatchToProps = (dispatch, ownProps) => (
     {
-        fetchUser: (accountId) => dispatch(fetchUser(accountId))
+        fetchUser: (accountId) => dispatch(Actions.fetchUser(accountId))
     }
 )
 
