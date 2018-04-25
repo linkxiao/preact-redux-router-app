@@ -15,20 +15,24 @@ class Profile extends Component {
         <div>
             <h2>Load successfully!</h2>
             <ul>
-                <li>name: {data.name}</li>
-                <li>url: {data.avatar_url}</li>
+                <li>name: { data && data.name }</li>
+                <li>url: { data && data.avatar_url }</li>
                 <p><Link to="/">Back to Home</Link></p>
             </ul>
         </div>
     )
     render(state) {
-        return state.profileReducer.loading ? this.loadingMode() : this.completeMode(state.profileReducer.user);
+        //alert(state.profileData.loading);
+        return state.profileData.loading ? this.loadingMode() : this.completeMode(state.profileData.user);
     }
 }
 
 
 //get当前的state(即：等同于store.getState());
+let count = 0;
 const mapStateToProps = (state, ownProps) => {
+   count+=1;
+   console.log('state.profileData1:'+count+'', JSON.stringify(state.profileData));
    return state;
 }
 

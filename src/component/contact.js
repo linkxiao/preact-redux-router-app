@@ -14,7 +14,7 @@ class Contact extends Component {
     optParams = () => (
         {
             loading: false,
-            user: null,
+            mark:'change',
             contact: {
                 "name":"opopop",
                 "phone": "17701321596",
@@ -26,10 +26,10 @@ class Contact extends Component {
        <div>
           <h2>Load successfully!</h2>
           <ul>
-              <li>title: {data.name}</li>
-              <li>phone: {data.phone}</li>
+              <li>title:{data.name}</li>
+              <li>phone:{data.phone}</li>
               <li>author: {data.email}</li>
-              <p><Link to="/">Back to Home</Link></p>
+              <p><Link to = "/">Back to Home</Link></p>
               <p onClick = {this.props.getLx.bind(this, this.optParams())}>click me</p>
           </ul>
       </div>
@@ -40,8 +40,10 @@ class Contact extends Component {
 }
 
 //const mapStateToProps = ({ loading, about }) => {
+let count = 0;
 const mapStateToProps = (state, ownProps) => {
-  console.log("state.contactData.contact:",state.contactData.contact);
+   count+=1;
+   console.log('state.contactData:'+count+'',state.contactData);
    return state;
 }
 

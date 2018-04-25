@@ -6,6 +6,7 @@
 
 import webpack from 'webpack';
 import path from 'path';
+const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const tplSourcePath = path.join(__dirname, './template');
 const tplTargetPath = path.join(__dirname, './output/');
@@ -36,7 +37,8 @@ const webpackConfig = {
           //cdn: CDN,
           template: tplSourcePath + '/index.html',
           filename: tplTargetPath + '/index.html'
-      })
+      }),
+      new FriendlyErrorsWebpackPlugin()
     ],
     module: {
         rules: [
@@ -61,6 +63,7 @@ const webpackConfig = {
         port: 8089,
         historyApiFallback: true,
         hot: true,
+        quiet: true,
         inline: true,
         open:true,
         progress: true,

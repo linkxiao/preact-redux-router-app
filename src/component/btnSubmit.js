@@ -29,7 +29,7 @@ class BtnSub extends Component {
         }
     }
 
-     getFormData = () => {
+    getFormData = () => {
        let curData ='name='+this.state.name+'&age='+this.state.age+'&keyWord='+this.state.keyWord+'';
            alert("curData:"+curData);
            alert("this.state:"+JSON.stringify(this.state));
@@ -46,7 +46,7 @@ class BtnSub extends Component {
     }
 
 
-      render(router, { text = '' }) {
+    render(router, { text = '' }) {
         return(
             <section>
                 <p>Enter an account of Github.</p>

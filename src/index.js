@@ -10,15 +10,15 @@ import 'preact/devtools';
 
 import store from './store';
 
-let root;
+let wrap;
 const renderApp = () => {
     const App = require('./component/app');
-    root = render(
+    wrap = render(
         <Provider store={store}>
             <App />
         </Provider>,
-        document.body,
-        root
+        document.getElementById('root'),
+        wrap
     );
 };
 

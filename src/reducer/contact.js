@@ -1,4 +1,4 @@
-import { GET_LXINFO } from '../lib/const/actionType';
+import { GET_LXINFO, FETCH_LOADING } from '../lib/const/actionType';
 
 // const initState = {
 //     loading: true,
@@ -14,7 +14,7 @@ export const contact = {
     init: function(data) {
       return {
            loading: false,
-           user: null,
+           mark: "1",
            contact: {
              name: data.contactData.name,
              phone: data.contactData.phone,
@@ -27,16 +27,27 @@ export const contact = {
         //alert("reducer:action"+JSON.stringify(action));
         action.data = action.data ? action.data : {}
         switch (action.type) {
+            case FETCH_LOADING:
+            state = Object.assign({
+              loading: true,
+              mark:'2'
+            });
+
             case GET_LXINFO:
-            state = Object.assign({},state, action.data);
-            //     alert("contact:yes");
-            //     return {
-            //         loading: false,
-            //         contact: action.data
-            //     }
+            state = Object.assign({
+            loading: false,
+            mark:'3'
+            },
+            state,
+            action.data);
 
             default:
-            state = Object.assign({},state, action.data)
+            state = Object.assign({
+            loading: true,
+            mark:'4'
+            },
+            state,
+            action.data);
                 // alert("contact:noCase");
                 // return {
                 //     loading: false,

@@ -1,7 +1,7 @@
 {
-  "name": "try-preact",
+  "name": "preact-redux-router-app",
   "version": "1.0.0",
-  "description": "Try Preact.",
+  "description": "the project for preact、preact-redux and preact-router of app",
   "main": "index.js",
   "scripts": {
     "start": "babel-node ./node_modules/.bin/webpack-dev-server --inline --progress --colors --open",
@@ -36,6 +36,7 @@
     "whatwg-fetch": "^2.0.3"
   },
   "devDependencies": {
+    "friendly-errors-webpack-plugin": "^1.7.0",
     "html-webpack-plugin": "^3.0.7",
     "preact-router-redux": "^4.1.0",
     "webpack": "^3.8.1",

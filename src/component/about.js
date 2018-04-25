@@ -8,7 +8,7 @@ class About extends Component {
     componentDidMount() {
         //const accountId = this.props.match.params.accountId;
         this.props.getAbout();
-        alert("about:this.props"+JSON.stringify(this.props));
+        //alert("about:this.props"+JSON.stringify(this.props));
     }
     loadingMode = () => (
         <p>Loading...</p>

@@ -5,7 +5,7 @@
  */
 
  import { combineReducers } from 'redux';
- import { profileReducer } from './profile';
+ import { profile } from './profile';
  import { about } from './about';
  import { contact } from './contact';
  import { active } from './active';
@@ -20,6 +20,7 @@ let contentData = (state = {}) => state;
 
 export const initStore = function(res) {
   return {
+      profileData: profile.init(),
       contactData: contact.init(res.data),
       //activeData: active.init(res.data),
       headerData: res.data.headerData,
@@ -33,11 +34,12 @@ export const initStore = function(res) {
 
 
 export default combineReducers({
+    profileData: profile.reducer,
     contactData: contact.reducer,
     //activeData,
     about,
     headerData,
     sideData,
-    contentData,
-    profileReducer
+    contentData
+    //profileReducer
 })
