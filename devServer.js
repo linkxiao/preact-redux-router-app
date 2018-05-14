@@ -13,10 +13,11 @@ const HOST = 'localhost';
 const PORT = 8089;
 
 const server = new WebpackDevServer(webpack(config), {
-    contentBase: path.join(__dirname, 'output'),
+    contentBase: path.join(__dirname, 'template'),
     publicPath: config.output.publicPath,
-    hot: true,
+    //hot: true,
     open: true,
+    quiet: true,
     inline:true,
     compress: true,
     historyApiFallback: true,

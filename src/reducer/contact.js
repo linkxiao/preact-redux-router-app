@@ -16,7 +16,7 @@ export const contact = {
            loading: false,
            mark: "1",
            contact: {
-             name: data.contactData.name,
+             name:  data.contactData.name,
              phone: data.contactData.phone,
              email: data.contactData.email
            }

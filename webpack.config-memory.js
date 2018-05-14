@@ -10,8 +10,7 @@ const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const tplSourcePath = path.join(__dirname, './template');
 const tplTargetPath = path.join(__dirname, './output/');
-const isServer = process.env.NODE_ENV === 'production';
-console.log("isServer:",isServer);
+
 const webpackConfig = {
     entry: {
         index: [
@@ -21,10 +20,9 @@ const webpackConfig = {
         ]
     },
     output: {
-        //path: path.join(__dirname, 'output/assets'),
-        path: isServer ? path.join(__dirname, 'output/assets') : path.join(__dirname, 'output'),
+        path: path.join(__dirname, 'output'),
         filename: 'app_[hash:8].js',
-        publicPath: isServer ? '/assets' : 'http://localhost:8089/'
+        // publicPath: '/assets/'
     },
     //devtool: 'inline-source-map',//inline-source-map
     plugins: [
@@ -37,7 +35,7 @@ const webpackConfig = {
           debug: false
       }),
       new HtmlWebpackPlugin({
-           inject: true,
+          // inject: true,
           //cdn: CDN,
           template: tplSourcePath + '/index.html',
           filename: tplTargetPath + '/index.html',
@@ -62,16 +60,16 @@ const webpackConfig = {
         }
     },
     devServer: {
-        contentBase: __dirname + '/output',//__dirname + './',
+        contentBase: tplSourcePath,//__dirname + './',
         publicPath: __dirname + '/assets/',
         host: "localhost",
         port: 8089,
         historyApiFallback: true,
-        //hot: true,
+        hot: true,
         quiet: true,
         inline: true,
         open:true,
-        //progress: true,
+        progress: true,
         compress: false,
         proxy: {
           //"**": "http://localhost:8089/output/"

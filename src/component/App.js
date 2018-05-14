@@ -3,7 +3,7 @@ import {
     BrowserRouter as Router,
     Route,
     Switch,
-    hashHistory
+    hashHistory,
 } from 'react-router-dom';
 import Home from './Home';
 import InputStateApp from './InputStateApp';
@@ -14,6 +14,7 @@ import About from './about';
 import Detail from './deatil';
 import Contact from './contact';
 import Error from './Error';
+// import createBrowserHistory from 'history'
 // export default class initApp extends Component {
 //     constructor(props) {
 //         super(props);
@@ -31,7 +32,7 @@ import Error from './Error';
 //     }
 //
 // }
-
+// let history = createBrowserHistory()-
  const App = () => (
     <div>
         <h1>Hello Preact.</h1>
